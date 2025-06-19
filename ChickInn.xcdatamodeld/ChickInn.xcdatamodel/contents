@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23788.4" systemVersion="24F74" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Chicken" representedClassName="Chicken" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="photoData" optional="YES" attributeType="Binary"/>
+        <relationship name="eggs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Egg" inverseName="chicken" inverseEntity="Egg"/>
+        <relationship name="medications" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medication" inverseName="chicken" inverseEntity="Medication"/>
+        <relationship name="moultings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MoultPeriod" inverseName="chicken" inverseEntity="MoultPeriod"/>
+    </entity>
+    <entity name="Egg" representedClassName="Egg" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="laidAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="photoData" optional="YES" attributeType="Binary"/>
+        <relationship name="chicken" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chicken" inverseName="eggs" inverseEntity="Chicken"/>
+    </entity>
+    <entity name="Medication" representedClassName="Medication" syncable="YES" codeGenerationType="class">
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="chicken" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chicken" inverseName="medications" inverseEntity="Chicken"/>
+    </entity>
+    <entity name="MoultPeriod" representedClassName="MoultPeriod" syncable="YES" codeGenerationType="class">
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="chicken" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chicken" inverseName="moultings" inverseEntity="Chicken"/>
+    </entity>
+</model>

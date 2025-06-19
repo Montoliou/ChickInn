@@ -1,0 +1,33 @@
+name: ChickInn
+options:
+  deploymentTarget:
+    iOS: 17.0
+  bundleIdPrefix: com.example
+settings:
+  SWIFT_VERSION: 5.9
+packages: {}
+targets:
+  ChickInn:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Sources
+    resources:
+      - path: Resources
+    info:
+      path: Info.plist
+      properties:
+        UILaunchStoryboardName: ""
+        UISupportedInterfaceOrientations: ["UIInterfaceOrientationPortrait"]
+        UIRequiresFullScreen: true
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+  ChickInnTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Tests
+    dependencies:
+      - target: ChickInn

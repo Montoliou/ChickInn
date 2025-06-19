@@ -1,0 +1,22 @@
+{
+  "chickens": [
+    {
+      "id": "1D1E1D1E-1111-2222-3333-444444444444",
+      "name": "Henrietta",
+      "notes": "Leghorn"
+    },
+    {
+      "id": "2D2E2D2E-5555-6666-7777-888888888888",
+      "name": "Gertrude",
+      "notes": ""
+    },
+    {
+      "id": "3D3E3D3E-9999-AAAA-BBBB-CCCCCCCCCCCC",
+      "name": "Cluck Norris",
+      "notes": "Silkie"
+    }
+  ],
+  "eggs": 20,
+  "moult": true,
+  "medication": true
+}
